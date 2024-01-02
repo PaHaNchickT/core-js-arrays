@@ -20,8 +20,12 @@
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(k, l) {
+  let temp = k - 1;
+  return Array.from({ length: Math.abs(k - l) + 1 }, function unnamed() {
+    temp += 1;
+    return temp;
+  });
 }
 
 /**
