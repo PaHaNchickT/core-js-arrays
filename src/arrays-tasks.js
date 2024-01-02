@@ -196,21 +196,12 @@ function isValueEqualsIndex(arr) {
  *    insertItem([ 1, 'b', 'c'], 'x', 0) => [ 'x', 1, 'b', 'c' ]
  */
 // function insertItem(arr, item, index) {
-//   let out;
-//   if (index > 0) {
-//     const temp = arr.splice(0, index);
-//     temp.push(item);
-//     out = temp.concat(arr.splice(index - 1, arr[arr.length - 1]));
-//   } else {
-//     const temp = arr;
-//     arr.unshift(item);
-//     out = temp;
-//   }
-//   return out;
+//   return [...arr.splice(0, index), item, ...arr.splice(0, arr.length)];
 // }
 
-function insertItem(/* arr, n */) {
-  throw new Error('Not implemented');
+function insertItem(arr, item, index) {
+  arr.splice(index, 0, item);
+  return arr;
 }
 
 /**
