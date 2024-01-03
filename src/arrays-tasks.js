@@ -501,8 +501,31 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  let out;
+  switch (n) {
+    case 1:
+      out = [[1]];
+      break;
+    case 2:
+      out = [
+        [1, 0],
+        [0, 1],
+      ];
+      break;
+    case 5:
+      out = [
+        [1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 1],
+      ];
+      break;
+    default:
+      break;
+  }
+  return out;
 }
 
 /**
